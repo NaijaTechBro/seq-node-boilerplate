@@ -20,16 +20,30 @@ global.gxLogger = function (type = 'info', message) {
   logger[type](message);
 };
 
+/**
+ * Logger/Winston Constant Types
+ * @type {{ERROR: string, INFO: string, WARNING: string}}
+ */
 global.gxLoggerType = {
   INFO: 'info',
   ERROR: 'error',
   WARNING: 'warning',
 };
 
+/**
+ * Instantiate a new ApiError class
+ * @param statusCode
+ * @param message
+ */
 global.gxApiError = function (statusCode, message) {
   throw new ApiError(statusCode, message);
 };
 
+/**
+ * Instantiate a new ApiError class
+ * @description Use this to formulate standardized responses
+ * @param message
+ */
 global.gxApiErrorNotFound = function (message) {
   throw new ApiError(httpStatus.NOT_FOUND, message);
 };
