@@ -9,7 +9,7 @@ const userValidation = require('../../validations/user.validations');
 const router = require('express').Router();
 
 router
-  .route('/')
+  .route('/api')
   .get(userController.getUsers)
   .post(validate(userValidation.createUser), userController.createUser);
 
